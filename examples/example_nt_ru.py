@@ -6,22 +6,22 @@ import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 """
-Пример использования POSIX-слоя совместимости
-Демонстрирует работу с POSIX-стилем вызовов
+Пример использования NT-слоя совместимости
+Демонстрирует работу с WinAPI-стилем вызовов
 
 Версия: 0.1
 Дата: 21.06.2026
 """
 
-from hybrid_arbiter_ru import HybridArbiter, PosixCompatLayer
+from hybrid_arbiter_ru import HybridArbiter, NtCompatLayer
 
 
 def main():
     """
-    Демонстрация работы POSIX-слоя
+    Демонстрация работы NT-слоя
     """
     print("=" * 60)
-    print("Пример: POSIX-программа")
+    print("Пример: NT-программа (WinAPI-стиль)")
     print("=" * 60)
     print()
 
@@ -29,32 +29,32 @@ def main():
     print("> Создание ядра-арбитра...")
     kernel = HybridArbiter()
     
-    # Создаём POSIX-слой совместимости
-    print("> Создание POSIX-слоя совместимости...")
-    posix = PosixCompatLayer(kernel)
+    # Создаём NT-слой совместимости
+    print("> Создание NT-слоя совместимости...")
+    nt = NtCompatLayer(kernel)
     print()
 
     # =============================================================
-    # 1. Открытие файла
+    # 1. Открытие файла (CreateFile)
     # =============================================================
-    print(">>> 1. Открытие файла")
+    print(">>> 1. Открытие файла (CreateFile)")
     print("-" * 40)
     
-    fd = posix.open("/home/user/hello.txt")
-    if fd != -1:
-        print(f"✅ Файл открыт, дескриптор: {fd}")
+    handle = nt.CreateFile("C:\\Users\\User\\hello.txt")
+    if handle != -1:
+        print(f"✅ Файл открыт, HANDLE: {handle}")
     else:
         print("❌ Ошибка открытия файла")
         return
     print()
 
     # =============================================================
-    # 2. Чтение файла
+    # 2. Чтение файла (ReadFile)
     # =============================================================
-    print(">>> 2. Чтение файла")
+    print(">>> 2. Чтение файла (ReadFile)")
     print("-" * 40)
     
-    content = posix.read(fd, 50)
+    content = nt.ReadFile(handle, 50)
     if content:
         print(f"✅ Прочитано: '{content}'")
     else:
@@ -62,25 +62,25 @@ def main():
     print()
 
     # =============================================================
-    # 3. Закрытие файла
+    # 3. Закрытие файла (CloseHandle)
     # =============================================================
-    print(">>> 3. Закрытие файла")
+    print(">>> 3. Закрытие файла (CloseHandle)")
     print("-" * 40)
     
-    result = posix.close(fd)
-    if result == 0:
+    result = nt.CloseHandle(handle)
+    if result == 1:
         print("✅ Файл закрыт")
     else:
         print("❌ Ошибка закрытия файла")
     print()
 
     # =============================================================
-    # 4. Создание процесса (fork)
+    # 4. Создание процесса (CreateProcess)
     # =============================================================
-    print(">>> 4. Создание процесса (fork)")
+    print(">>> 4. Создание процесса (CreateProcess)")
     print("-" * 40)
     
-    pid = posix.fork()
+    pid = nt.CreateProcess("notepad.exe")
     if pid != -1:
         print(f"✅ Процесс создан, PID: {pid}")
     else:
@@ -88,29 +88,13 @@ def main():
     print()
 
     # =============================================================
-    # 5. Запуск программы (execve)
+    # 5. Пауза (Sleep)
     # =============================================================
-    print(">>> 5. Запуск программы (execve)")
+    print(">>> 5. Пауза (Sleep)")
     print("-" * 40)
     
-    pid2 = posix.execve("/bin/ls", ["ls", "-l"])
-    if pid2 != -1:
-        print(f"✅ Программа запущена, PID: {pid2}")
-    else:
-        print("❌ Ошибка запуска программы")
-    print()
-
-    # =============================================================
-    # 6. Пауза (sleep)
-    # =============================================================
-    print(">>> 6. Пауза (sleep)")
-    print("-" * 40)
-    
-    result = posix.sleep(2)
-    if result == 0:
-        print("✅ Пауза выполнена")
-    else:
-        print("❌ Ошибка паузы")
+    nt.Sleep(2000)  # 2000 мс = 2 секунды
+    print("✅ Пауза выполнена")
     print()
 
     print("=" * 60)
