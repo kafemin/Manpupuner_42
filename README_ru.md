@@ -148,10 +148,13 @@ Manpupuner_42/
 │   ├── concept_ru.md      # Полная концепция проекта (русский)
 │   └── concept_en.md      # Полная концепция проекта (английский)
 └── examples/
-    ├── example_posix_ru.py    # Пример POSIX-слоя (рус.)
-    ├── example_posix_en.py    # Пример POSIX-слоя (англ.)
-    ├── example_nt_ru.py       # Пример NT-слоя (рус.)
-    └── example_nt_en.py       # Пример NT-слоя (англ.)
+│   ├── example_posix_ru.py    # Пример POSIX-слоя (рус.)
+│   ├── example_posix_en.py    # Пример POSIX-слоя (англ.)
+│   ├── example_nt_ru.py       # Пример NT-слоя (рус.)
+│   └── example_nt_en.py       # Пример NT-слоя (англ.)
+└── tests/
+    ├── __init__.py         # Делает папку модулем Python
+    └── test_arbiter.py     # Модульные тесты
 ```
 
 ---

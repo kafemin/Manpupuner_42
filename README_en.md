@@ -146,11 +146,14 @@ Manpupuner_42/
 ├── docs/
 │   ├── concept_ru.md      # Full project concept (Russian)
 │   └── concept_en.md      # Full project concept (English)
-└── examples/
-    ├── example_posix_ru.py    # POSIX layer example (Russian)
-    ├── example_posix_en.py    # POSIX layer example (English)
-    ├── example_nt_ru.py       # NT layer example (Russian)
-    └── example_nt_en.py       # NT layer example (English)
+├── examples/
+│   ├── example_posix_ru.py    # POSIX layer example (Russian)
+│   ├── example_posix_en.py    # POSIX layer example (English)
+│   ├── example_nt_ru.py       # NT layer example (Russian)
+│   └── example_nt_en.py       # NT layer example (English)
+└── tests/
+    ├── __init__.py         # Makes the folder a Python module
+    └── test_arbiter.py     # Unit tests
 ```
 
 ---
