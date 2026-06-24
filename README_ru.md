@@ -1,13 +1,21 @@
-
 # ⛰️ Manpupuner_42
 
 **Гибридный арбитр системных вызовов**  
 *Hybrid System Call Arbiter*
 
-[![Version](https://img.shields.io/badge/version-0.1-blue)](https://github.com/Kafemin/Manpupuner_42)
+[![Version](https://img.shields.io/badge/version-0.1-blue)](https://github.com/kafemin/Manpupuner_42)
 [![Python](https://img.shields.io/badge/python-3.6+-green)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
+---
+
+## 🔗 Ссылки на проекты / Repository Links
+
+| Репозиторий | Описание | Ссылка |
+|:---|:---|:---|
+| **Manpupuner_42** | Python PoC (концепция) | [https://github.com/kafemin/Manpupuner_42](https://github.com/kafemin/Manpupuner_42) |
+| **manpupuner_kernel** | Ядро на C/Asm (реализация) | [https://github.com/kafemin/manpupuner_kernel](https://github.com/kafemin/manpupuner_kernel) |
 
 ---
 
@@ -20,6 +28,16 @@
 
 > 🚀 **Это не эмуляция, не виртуализация и не второе ядро.**  
 > Это — **единое ядро с двумя интерфейсами**, обеспечивающее двунаправленную совместимость.
+
+---
+
+## ⚠️ Дисклеймер
+
+**Это демонстрация концепции (Proof of Concept).**
+
+Проект является экспериментальным. Он может содержать ошибки, сбои или неожиданное поведение. Тестирование проводилось только в эмуляторе QEMU. Запуск на реальном оборудовании осуществляется на ваш собственный риск. Автор не несёт ответственности за любые повреждения, потерю данных или выход из строя оборудования.
+
+**Размер ядра: ~14 КБ (меньше 20 КБ).**
 
 ---
 
@@ -40,7 +58,7 @@
 
 ```bash
 # 1. Клонируйте репозиторий
-git clone https://github.com/Kafemin/Manpupuner_42.git
+git clone https://github.com/kafemin/Manpupuner_42.git
 cd Manpupuner_42
 
 # 2. Запустите демонстрацию (на русском)
@@ -147,7 +165,7 @@ Manpupuner_42/
 ├── docs/
 │   ├── concept_ru.md      # Полная концепция проекта (русский)
 │   └── concept_en.md      # Полная концепция проекта (английский)
-└── examples/
+├── examples/
 │   ├── example_posix_ru.py    # Пример POSIX-слоя (рус.)
 │   ├── example_posix_en.py    # Пример POSIX-слоя (англ.)
 │   ├── example_nt_ru.py       # Пример NT-слоя (рус.)
@@ -190,7 +208,7 @@ python3 -m unittest discover tests
 
 | Роль | Имя |
 |:---|:---|
-| **Автор идеи и архитектуры** | [Kafemin](https://github.com/kafemin) |
+| **Автор идеи и архитектуры** | [Каськов Александр (Kafemin)](https://github.com/kafemin) |
 | **Техническая реализация** | При участии AI-ассистента [DeepSeek](https://deepseek.com) |
 
 ---
@@ -209,4 +227,3 @@ python3 -m unittest discover tests
 ---
 
 > *"Люди должны увидеть принцип, а дальше... всё пойдёт своим чередом."*
-

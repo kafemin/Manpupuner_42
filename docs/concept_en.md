@@ -5,6 +5,25 @@
 
 ---
 
+## 🔗 Repository Links
+
+| Repository | Description | Link |
+|:---|:---|:---|
+| **Manpupuner_42** | Python PoC (concept) | [https://github.com/kafemin/Manpupuner_42](https://github.com/kafemin/Manpupuner_42) |
+| **manpupuner_kernel** | Kernel in C/Asm (implementation) | [https://github.com/kafemin/manpupuner_kernel](https://github.com/kafemin/manpupuner_kernel) |
+
+---
+
+## ⚠️ Disclaimer
+
+**This is a Proof of Concept (demonstration).**
+
+This project is experimental. It may contain bugs, errors, or unexpected behavior. Testing has been conducted **only** in the QEMU emulator. Running on real hardware is at your own risk. The author assumes no responsibility for any damage, data loss, or hardware failure.
+
+**Kernel size: ~14 KB (less than 20 KB).**
+
+---
+
 ## 1. Introduction: The Problem and The Idea
 
 Modern operating systems are built around a **kernel** — a program that manages hardware and provides applications with **system calls** (an interface for working with files, memory, processes, etc.).
@@ -117,7 +136,7 @@ This proves that the **principle of a universal arbiter works**.
 
 ## 7. Creation History
 
-### 🧠 Original Concept (author: Kafemin)
+### 🧠 Original Concept (author: Kaskov Aleksandr)
 
 The project idea was born from an observation:
 
@@ -128,6 +147,11 @@ The author suggested that:
 - Two kernels are not needed — one arbiter is enough.
 - Conflicts between kernels can be bypassed by removing the kernels themselves and keeping only system calls.
 - This approach would reduce code volume and simplify cross-platform development.
+
+**Two-stage validation:**
+
+1. **Python PoC** — concept validated in Python: [https://github.com/kafemin/Manpupuner_42](https://github.com/kafemin/Manpupuner_42)
+2. **Kernel implementation** — C and Assembly: [https://github.com/kafemin/manpupuner_kernel](https://github.com/kafemin/manpupuner_kernel)
 
 ### 💻 Technical Implementation
 
@@ -162,7 +186,7 @@ Manpupuner_42 is a **philosophy**: unite, not divide. Build bridges, not walls.
 
 ---
 
-**Idea and architecture author:** Kafemin  
+**Idea and architecture author:** Kaskov Aleksandr (Kafemin)  
 **Technical implementation:** with DeepSeek AI assistant participation  
 **Version:** 0.1  
 **Date:** 21.06.2026

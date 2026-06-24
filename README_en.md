@@ -3,22 +3,41 @@
 **Hybrid System Call Arbiter**  
 *Гибридный арбитр системных вызовов*
 
-[![Version](https://img.shields.io/badge/version-0.1-blue)](https://github.com/Kafemin/Manpupuner_42)
+[![Version](https://img.shields.io/badge/version-0.1-blue)](https://github.com/kafemin/Manpupuner_42)
 [![Python](https://img.shields.io/badge/python-3.6+-green)](https://www.python.org/)
 [![License](https://img.shields.io/badge/license-MIT-yellow)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 ---
 
+## 🔗 Repository Links
+
+| Repository | Description | Link |
+|:---|:---|:---|
+| **Manpupuner_42** | Python PoC (concept) | [https://github.com/kafemin/Manpupuner_42](https://github.com/kafemin/Manpupuner_42) |
+| **manpupuner_kernel** | Kernel in C/Asm (implementation) | [https://github.com/kafemin/manpupuner_kernel](https://github.com/kafemin/manpupuner_kernel) |
+
+---
+
 ## 📖 About
 
-**Manpupuner_42** is a Proof of Concept (PoC) that challenges established approaches in operating system development. Instead of emulation or virtualization, the project proposes **interface unification** at the lowest level — the level of system calls.
+**Manpupuner_42** is a Proof of Concept that challenges established approaches in operating system development. Instead of emulation or virtualization, the project proposes **interface unification** at the lowest level — the level of system calls.
 
 **The core idea:**  
 Create a minimal abstraction layer (arbiter) between hardware and applications. This arbiter understands requests from different ecosystems (e.g., POSIX and NT) and processes them through a **unified internal API of 7 basic calls**.
 
 > 🚀 **This is not emulation, not virtualization, and not a second kernel.**  
 > This is — **a single kernel with two interfaces**, providing bidirectional compatibility.
+
+---
+
+## ⚠️ Disclaimer
+
+**This is a Proof of Concept (demonstration).**
+
+This project is experimental. It may contain bugs, errors, or unexpected behavior. Testing has been conducted **only** in the QEMU emulator. Running on real hardware is at your own risk. The author assumes no responsibility for any damage, data loss, or hardware failure.
+
+**Kernel size: ~14 KB (less than 20 KB).**
 
 ---
 
@@ -39,7 +58,7 @@ Try the project locally in 30 seconds:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/Kafemin/Manpupuner_42.git
+git clone https://github.com/kafemin/Manpupuner_42.git
 cd Manpupuner_42
 
 # 2. Run the demo (English)
@@ -189,7 +208,7 @@ This project is distributed under the **MIT License** — a permissive license t
 
 | Role | Name |
 |:---|:---|
-| **Idea and Architecture Author** | [Kafemin](https://github.com/kafemin) |
+| **Idea & Architecture Author** | [Kaskov Aleksandr (Kafemin)](https://github.com/kafemin) |
 | **Technical Implementation** | With [DeepSeek](https://deepseek.com) AI assistant participation |
 
 ---
